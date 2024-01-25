@@ -1,3 +1,4 @@
+#Library made by Vilém Urbánek
 class encript:
 
     def __init__(self): 
