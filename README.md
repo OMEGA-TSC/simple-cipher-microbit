@@ -7,7 +7,7 @@
 Library has 2 main classes `encript` and `decrypt`.
 
 ## Ciphers available
-- hex
++ hex
 
 ## Example
 ```python
