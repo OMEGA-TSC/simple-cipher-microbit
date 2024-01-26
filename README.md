@@ -8,6 +8,7 @@ Library has 2 main classes `encript` and `decrypt`.
 
 ## Ciphers available
 + hex
++ caesar
 
 ## Example
 ```python
