@@ -1,7 +1,7 @@
 
 # micro:bit simple cipher
 ### simple cipher library for BBC micro:bit
-### library version v1.0.0
+### Current library version v1.1.1
 
 ## Classes
 Library has 2 main classes `encript` and `decrypt`.
