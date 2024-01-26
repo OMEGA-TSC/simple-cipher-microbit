@@ -1,7 +1,7 @@
 class encrypt:
 
     def __init__(self): 
-        hex_ch = ["0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"]
+        hex_ch = "0123456789ABCDEF"
         self.hex_ch = hex_ch
         
     def hex(self, text: str):
@@ -24,10 +24,22 @@ class encrypt:
                 res += char
         return res
     
+    def shuffle(self, text: str):
+        res = ""
+        for c in range(len(text)):
+            buf = ""
+            if c % 2 != 0:
+                buf = text[c]
+                buf += res
+                res = buf
+            else:
+                res += text[c]
+        return res  
+    
 class decrypt:
 
     def __init__(self):
-        hex_ch = ["0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"]
+        hex_ch = "0123456789ABCDEF"
         self.hex_ch = hex_ch
 
     def hex(self, text: str):
@@ -49,3 +61,27 @@ class decrypt:
             else:
                 res += char
         return res
+    
+    def shuffle(self, text: str):
+        chars = list(text)
+        res = ""
+        if len(chars) % 2 != 0:
+            for c in range((int(len(chars) / 2) + 1)):
+                buf = ""
+                if c < (int(len(chars) / 2)):
+                    buf += chars[((len(chars) - 1) - c)]
+                    buf += res 
+                    res = buf
+                buf = chars[c]
+                buf += res
+                res = buf
+        else:
+            for c in range(int(len(chars) / 2)):
+                buf = ""
+                buf += chars[c]
+                buf += res 
+                res = buf
+                buf = chars[((len(chars) - 1) - c)]
+                buf += res
+                res = buf    
+        return res  
