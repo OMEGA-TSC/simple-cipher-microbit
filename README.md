@@ -13,7 +13,7 @@ Library has 2 main classes `encript` and `decrypt`.
 ## Example
 ```python
 import simplecipher
-enc = simplecipher.encript()
+enc = simplecipher.encrypt()
 encrypted_text = enc.hex("Hello, World!")
 print("Encrypted text:", encrypted_text)
 
