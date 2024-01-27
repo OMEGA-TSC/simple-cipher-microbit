@@ -10,6 +10,7 @@ Library has 2 main classes `encript` and `decrypt`.
 + hex
 + caesar
 + shuffle
++ ascii
 
 ## Example
 ```python
