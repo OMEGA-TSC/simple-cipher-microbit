@@ -36,6 +36,14 @@ class encrypt:
                 res += text[c]
         return res  
     
+    def ascii(self, text: str):
+        res = ""
+        for i in range(len(text)):
+            res += str(ord(text[i]))
+            if i < (len(text) - 1):
+                res += ":"
+        return res
+    
 class decrypt:
 
     def __init__(self):
@@ -85,3 +93,10 @@ class decrypt:
                 buf += res
                 res = buf    
         return res  
+    
+    def ascii(self, text: str):
+        res = ""
+        chars = text.split(":")
+        for c in chars:
+            res += chr(int(c))
+        return res
