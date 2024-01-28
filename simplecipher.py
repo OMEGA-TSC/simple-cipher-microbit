@@ -65,6 +65,14 @@ class encrypt:
         res = [c if c != "A" else "=" for c in res]
         return "".join(res)
     
+    def bin(self, text: str):
+        res = ""
+        for i in range(len(text)):
+            res += str(bin(ord(text[i])))
+            if i < (len(text) - 1):
+                res += ":"
+        return res
+    
 class decrypt:
 
     def __init__(self):
@@ -141,4 +149,11 @@ class decrypt:
             if text[i+3] != "=":
                 dec_chars.append(buf3)
         res = "".join([chr(b) for b in dec_chars])
+        return res
+    
+    def bin(self, text: str):
+        res = ""
+        chars = text.split(":")
+        for i in range(len(chars)):
+            res += str(chr(int(chars[i], 2)))
         return res
